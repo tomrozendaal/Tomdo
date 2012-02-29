@@ -1,2 +1,13 @@
 <h1>Todo#index</h1>
 <p>Find me in app/views/todo/index.html.erb</p>
+
+<ul>
+	<%= @tasks.each do |task| %>
+		<li>
+			<%= task.description %> 
+			<%= button_to "Delete", { :action => "destroy", :id => task.id },
+          :confirm => "Are you sure?", :method => :delete %>
+		</li>
+	<% end %>
+</ul>
+<%= link_to "Create new task", new_todo_path  %>

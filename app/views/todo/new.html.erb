@@ -1,0 +1,15 @@
+<h1>Todo#new</h1>
+<p>Find me in app/views/todo/new.html.erb</p>
+
+<%= form_tag("/todo", :method => "POST") do %>
+	<%= label_tag(:priority, "Priority") %><br/>
+	<%= select_tag(:priority, options_for_select(@priorities)) %><br/><br/>
+	
+	<%= label_tag(:date, "Deadline date")%><br/>
+	<%= text_field_tag(:date)%><br/><br/>
+		
+	<%= label_tag(:description, "Description") %><br/>
+	<%= text_area_tag(:description) %><br/><br/>
+	
+	<%= submit_tag "Save" %>
+<% end %>
