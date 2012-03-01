@@ -3,13 +3,17 @@ class TodoController < ApplicationController
     @tasks = Task.all
   end
   def create
-    @params = params
-    
     @task = Task.new(params)
     @task.save
     
     redirect_to todo_index_path
     
+  end
+  
+  def edit
+    @priorities = {"High" => 1, "Medium" => 2, "Low" => 3}
+    @params = params
+    @task = Task.find(params['id'])
   end
   
   def new
@@ -20,9 +24,12 @@ class TodoController < ApplicationController
     
   end
   
+  def update
+    Task.update(params['id'], params)
+    redirect_to todo_index_path 
+  end
+  
   def destroy
-    @params = params
-    
     @task = Task.find(params['id'])
     @task.destroy
     

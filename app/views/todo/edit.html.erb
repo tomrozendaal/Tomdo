@@ -1,0 +1,18 @@
+<h1>Todo#edit</h1>
+<p>Find me in app/views/todo/edit.html.erb</p>
+
+<%= form_for @task, :url => {:action => "update"} do |f| %>
+	<%= label_tag(:priority, "Priority") %><br/>
+	<%= select_tag(:priority, options_for_select(@priorities, @task.priority)) %><br/><br/>
+	
+	<%= label_tag(:date, "Deadline date")%><br/>
+	<%= text_field_tag(:date, @task.date)%><br/><br/>
+	
+	<%= label_tag(:title, "Title") %><br/>
+	<%= text_field_tag(:title, @task.title)%><br/><br/>
+		
+	<%= label_tag(:description, "Description") %><br/>
+	<%= text_area_tag(:description, @task.description) %><br/><br/>
+	
+	<%= submit_tag "Save" %>
+<% end %>

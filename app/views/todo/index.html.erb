@@ -1,13 +1,34 @@
 <h1>Todo#index</h1>
 <p>Find me in app/views/todo/index.html.erb</p>
 
-<ul>
-	<%= @tasks.each do |task| %>
-		<li>
-			<%= task.description %> 
-			<%= button_to "Delete", { :action => "destroy", :id => task.id },
-          :confirm => "Are you sure?", :method => :delete %>
-		</li>
+<table>
+	<tr class="header">
+		<th>Priority</th>
+		<th>Date</th>
+		<th>Title</th>
+		<th width="60"></th>
+	</tr>
+	<% @tasks.each_with_index do |task,index| %>
+		<% case index%2 %>
+			<% when 0 %>
+				<tr class="odd">
+			<% when 1 %>
+				<tr class="even">
+		<% end %>
+		<% case task.priority %>
+			<% when 1 %>
+				<td>High</td>
+			<% when 2 %>
+				<td>Medium</td>
+			<% when 3 %>
+				<td>Low</td>
+		<% end %>
+			<td><%= task.date %></td>
+			<td><%= task.title %></td>
+			<td><%= button_to "", { :action => "destroy", :id => task.id },:confirm => "Are you sure?", :method => :delete, :class => "buttonDelete" %>
+				<%= button_to "", { :action => "edit", :id => task.id}, :method => :get, :class => "buttonEdit" %>
+			</td>		
+		</tr>
 	<% end %>
-</ul>
+</table>
 <%= link_to "Create new task", new_todo_path  %>

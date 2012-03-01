@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228192857) do
+ActiveRecord::Schema.define(:version => 20120301183953) do
 
   create_table "tasks", :force => true do |t|
     t.integer  "priority"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120228192857) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
 end
