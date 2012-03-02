@@ -14,7 +14,7 @@ body{
   left:0;
   width: 100%;
   height: 40px;
-  background-color: #788;
+  background-color: rgba(120,8,0,0.6);
 }
 
 #content{
@@ -30,6 +30,11 @@ body{
   border-radius: 6px;
   font-family: Arial;
   font-size: 12px;
+}
+
+#new_task_link{
+  width: 20px; 
+  text-align: right;
 }
 
 table{

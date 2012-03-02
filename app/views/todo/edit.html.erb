@@ -6,7 +6,7 @@
 	<%= select_tag(:priority, options_for_select(@priorities, @task.priority)) %><br/><br/>
 	
 	<%= label_tag(:date, "Deadline date")%><br/>
-	<%= text_field_tag(:date, @task.date)%><br/><br/>
+	<%= text_field_tag(:date, @task.date, :class => "datepicker")%><br/><br/>
 	
 	<%= label_tag(:title, "Title") %><br/>
 	<%= text_field_tag(:title, @task.title)%><br/><br/>

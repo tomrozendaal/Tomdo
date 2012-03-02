@@ -31,4 +31,8 @@
 		</tr>
 	<% end %>
 </table>
-<%= link_to "Create new task", new_todo_path  %>
+<div id="new_task_link">
+	<%= link_to(new_todo_path) do %>
+	  <%= image_tag "new.png" %>
+	<% end %>
+</div>
