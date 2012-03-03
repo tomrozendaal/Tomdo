@@ -22,8 +22,8 @@
 				<td>Medium</td>
 			<% when 3 %>
 				<td>Low</td>
-		<% end %>
-			<td><%= task.date %></td>
+		<% end %>		
+			<td><%= task.date[1] + '/' + task.date[0] + '/' + task.date[2] %></td>
 			<td><%= task.title %></td>
 			<td><%= button_to "", { :action => "destroy", :id => task.id },:confirm => "Are you sure?", :method => :delete, :class => "buttonDelete" %>
 				<%= button_to "", { :action => "edit", :id => task.id}, :method => :get, :class => "buttonEdit" %>

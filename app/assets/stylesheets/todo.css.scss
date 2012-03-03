@@ -4,9 +4,14 @@
 
 body{
   background: url('background.jpg') no-repeat center center fixed;
+  font-family: Arial;
   color: #ffffff;
   margin:0;
   padding: 0;
+}
+
+a, a:visited{
+  color: #FFF;
 }
 
 #header{
@@ -15,6 +20,23 @@ body{
   width: 100%;
   height: 40px;
   background-color: rgba(120,8,0,0.6);
+}
+
+#nav {
+  top:0;
+  left:0;
+  width: 40%;
+  margin: 0 auto;
+}
+
+#nav ul{
+  margin: 0;
+}
+#nav ul li{
+  line-height: 40px;
+  display: inline;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 #content{
@@ -28,7 +50,6 @@ body{
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  font-family: Arial;
   font-size: 12px;
 }
 

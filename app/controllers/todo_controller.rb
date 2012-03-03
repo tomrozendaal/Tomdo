@@ -1,6 +1,9 @@
 class TodoController < ApplicationController
   def index
     @tasks = Task.all
+    @tasks.each do |task|
+      task.date = task.date.split('/') 
+    end
   end
   def create
     @task = Task.new(params)
