@@ -1,5 +1,13 @@
 Tomdo::Application.routes.draw do
+  match 'users/login' => 'users#login'
+  resources :users
+  
+  match 'login' => 'page#login'
+  match 'logout' => 'page#logout'
+
   get "todo/index"
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +60,7 @@ Tomdo::Application.routes.draw do
   # just remember to delete public/index.html.
   
   resources :todo
-   root :to => 'todo#index'
+   root :to => 'page#home'
 
   # See how all your routes lay out with "rake routes"
 

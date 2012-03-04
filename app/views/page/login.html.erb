@@ -1,0 +1,16 @@
+<h1>Login</h1>
+
+<%= form_tag("/users/login", :method => "POST") do %>
+	<div class="field">
+	    <%= label_tag :username %><br />
+	    <%= text_field_tag :username %>
+  	</div>
+  	<div class="field">
+	    <%= label_tag :password %><br />
+	    <%= password_field_tag :password %>
+  	</div>
+	
+	<%= submit_tag "Login" %>
+<% end %>
+
+<p id="notice"><%= notice %></p>

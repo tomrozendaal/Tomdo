@@ -1,11 +1,12 @@
 class TodoController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.find(:all, :conditions => {:user_id => session[:user_id]})
     @tasks.each do |task|
       task.date = task.date.split('/') 
     end
   end
   def create
+    params['user_id'] = session[:user_id]
     @task = Task.new(params)
     @task.save
     

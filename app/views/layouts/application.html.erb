@@ -8,13 +8,24 @@
 </head>
 <body>
 <div id="header">
-	<div id="nav">
-		<ul>
-			<li><%= link_to "Home", todo_index_path %></li>
-			<li><%= link_to "Login", todo_index_path %></li>
-			<li><%= link_to "Register", todo_index_path %></li>
-		</ul>
-	</div>
+	<% if session[:user_id] %>
+		<div id="nav">
+			<ul>
+				<li><%= link_to "Home", '/' %></li>
+				<li><%= link_to "Task Overview", todo_index_path %></li>
+				<li><%= link_to "Add New Task", new_todo_path %></li>
+				<li><%= link_to "Logout(#{session[:username]})", logout_path %></li>
+			</ul>
+		</div>
+	<% else %>
+		<div id="nav">
+			<ul>
+				<li><%= link_to "Home", '/' %></li>
+				<li><%= link_to "Login", login_path %></li>
+				<li><%= link_to "Register", new_user_path %></li>
+			</ul>
+		</div>
+	<% end %>
 </div>
 <div id="content">
 <%= yield %>
